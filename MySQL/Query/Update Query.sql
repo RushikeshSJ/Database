@@ -1,0 +1,1 @@
+update automobile set Autoprice=600000 where AutoId=1;
