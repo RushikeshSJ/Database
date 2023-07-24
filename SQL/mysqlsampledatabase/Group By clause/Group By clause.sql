@@ -25,3 +25,11 @@ select orderNumber,
 sum(quantityOrdered * priceEach) as Total from orders
 inner join orderdetails using(orderNumber) 
 group by orderNumber;
+
+/*Group By Operations*/
+
+select year(orderDate),
+sum(quantityOrdered * priceEach) as Total, Status
+from orders inner join 
+orderdetails using(orderNumber) 
+where status="Shipped" group by year(orderDate);
