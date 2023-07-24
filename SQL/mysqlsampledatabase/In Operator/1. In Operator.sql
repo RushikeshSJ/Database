@@ -1,6 +1,22 @@
 /* In Operator */
-select * from customers;
+/*1. */
+SELECT 
+    *
+FROM
+    customers;
 
-Select * from customers where country In ('USA','France');
+/*2. */
+SELECT 
+    *
+FROM
+    customers
+WHERE
+    country IN ('USA' , 'France');
 
-Select * from customers where creditLimit between 10000 and 30000;
+/*3. */
+SELECT 
+    *
+FROM
+    customers
+WHERE
+    creditLimit BETWEEN 10000 AND 30000;

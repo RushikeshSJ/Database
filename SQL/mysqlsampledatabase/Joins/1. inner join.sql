@@ -1,4 +1,9 @@
 /*Joins */
 /*1. Inner Join*/
 
-select productCode, productName, productDescription from products inner join productlines using(productline);
+SELECT 
+    productCode, productName, productDescription
+FROM
+    products
+        INNER JOIN
+    productlines USING (productline);

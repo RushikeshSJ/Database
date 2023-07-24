@@ -1,7 +1,5 @@
 /*Like Operator*/
 
-select * from employees;
-
 /*1. Find employees whose first name starts with “a”*/
 select * from employees where firstName like 'a%';
 

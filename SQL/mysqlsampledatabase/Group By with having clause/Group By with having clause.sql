@@ -1,7 +1,12 @@
 /*Group By with having clause*/
 
-select orderNumber, 
-sum(quantityOrdered) as ItemCount, 
-sum(quantityOrdered * priceEach) as Total 
-from orders inner join orderdetails
-using(orderNumber) group by orderNumber having Total>1000;
+SELECT 
+    orderNumber,
+    SUM(quantityOrdered) AS ItemCount,
+    SUM(quantityOrdered * priceEach) AS Total
+FROM
+    orders
+        INNER JOIN
+    orderdetails USING (orderNumber)
+GROUP BY orderNumberemployeesemployeespayments
+HAVING Total > 1000;

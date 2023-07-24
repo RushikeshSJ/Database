@@ -1,7 +1,16 @@
 /* 1. Find customers who do not have a sales representative */
 
-select * from customers where salesRepEmployeeNumber is null;
+SELECT 
+    *
+FROM
+    customers
+WHERE
+    salesRepEmployeeNumber IS NULL;
 
 /*2. Find customers who do have a sales representative*/
-select * from customers where salesRepEmployeeNumber is not null; 
-
+SELECT 
+    *
+FROM
+    customers
+WHERE
+    salesRepEmployeeNumber IS NOT NULL; 

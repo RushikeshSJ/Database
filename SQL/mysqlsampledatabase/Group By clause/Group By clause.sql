@@ -1,23 +1,41 @@
 /*1. Group by clause*/
 
-select count(customerNumber), country from customers group by country;
+SELECT 
+    COUNT(customerNumber), country
+FROM
+    customers
+GROUP BY country;
 
 /*2. Sum Creditlimit of each country*/
 
-select sum(creditlimit),country from customers group by country;
+SELECT 
+    SUM(creditlimit), country
+FROM
+    customers
+GROUP BY country;
 
 /*3. Find the number of orders in each status from Orders Table*/
 
-select count(status), status from orders group by status;
+SELECT 
+    COUNT(status), status
+FROM
+    orders
+GROUP BY status;
 
 /*4. Find – Amount = sum( quantityOrdered * priceEach )*/
 
-select sum(quantityOrdered*priceEach)as Amount from orderdetails;
+SELECT 
+    SUM(quantityOrdered * priceEach) AS Amount
+FROM
+    orderdetails;
 
-select status, 
-sum(quantityOrdered * priceEach) 
-as Amount from orders inner join orderdetails using(orderNumber) 
-group by status;
+SELECT 
+    status, SUM(quantityOrdered * priceEach) AS Amount
+FROM
+    orders
+        INNER JOIN
+    orderdetails USING (orderNumber)
+GROUP BY status;
 
 /*Find – Total = sum( quantityOrdered * priceEach )*/
 
@@ -28,8 +46,14 @@ group by orderNumber;
 
 /*Group By Operations*/
 
-select year(orderDate),
-sum(quantityOrdered * priceEach) as Total, Status
-from orders inner join 
-orderdetails using(orderNumber) 
-where status="Shipped" group by year(orderDate);
+SELECT 
+    YEAR(orderDate),
+    SUM(quantityOrdered * priceEach) AS Total,
+    Status
+FROM
+    orders
+        INNER JOIN
+    orderdetails USING (orderNumber)
+WHERE
+    status = 'Shipped'
+GROUP BY YEAR(orderDate);

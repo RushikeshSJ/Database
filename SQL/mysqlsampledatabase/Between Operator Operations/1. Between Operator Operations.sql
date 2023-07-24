@@ -4,7 +4,12 @@ select * from orders;
 
 /* 1. Find product information from Products where buyPrice is 
 between 90 and 100 [ try with not ]*/
-Select * from products where buyPrice between 90 and 100;
+SELECT 
+    *
+FROM
+    products
+WHERE
+    buyPrice BETWEEN 90 AND 100;
 
 /* 2. Find order information from Orders between dates 1/1/2003 to 
 31/1/2003
